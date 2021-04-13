@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>K个一组翻转链表 // Eric&#39;s Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.70.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://zg999.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="K个一组翻转链表"/>
+<meta name="twitter:description" content="题目描述： 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
+k 是一个正整数，它的值小于或等于链表的长度。
+如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+ 示例：
+给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5
+当 k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5
+当 k = 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5
+ 说明：
+你的算法只能使用常数的额外空间。
+你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+ 解题思路： 翻转问题让我们想到栈这个后进先出的结构。循环中每次入栈k个结点，然后将当前指针p指向第k&#43;1个结点。
+将这k个结点依次取出并修改指针指向，并把最后一个结点指向p结点（这样就连接上了后面还未翻转的链表），如此循环下去。
+注意要考虑好剩下链表结点个数不够k个的问题：结点入栈的同时记录已经入栈了几个结点，如果栈中结点还小于k时链表就空了，那说明栈中的结点不必翻转了（结点个数不足k个）
+ Java代码： public ListNode reverseKGroup(ListNode head, int k) {Stack&lt;ListNode&gt; stack = new Stack&lt;&gt;();ListNode dummy = new ListNode(0);ListNode p = dummy;while(true){int count = 0;ListNode tmp = head;while(tmp != null &amp;&amp; count &lt; k){count&#43;&#43;;stack."/>
+
+    <meta property="og:title" content="K个一组翻转链表" />
+<meta property="og:description" content="题目描述： 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
+k 是一个正整数，它的值小于或等于链表的长度。
+如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+ 示例：
+给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5
+当 k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5
+当 k = 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5
+ 说明：
+你的算法只能使用常数的额外空间。
+你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+ 解题思路： 翻转问题让我们想到栈这个后进先出的结构。循环中每次入栈k个结点，然后将当前指针p指向第k&#43;1个结点。
+将这k个结点依次取出并修改指针指向，并把最后一个结点指向p结点（这样就连接上了后面还未翻转的链表），如此循环下去。
+注意要考虑好剩下链表结点个数不够k个的问题：结点入栈的同时记录已经入栈了几个结点，如果栈中结点还小于k时链表就空了，那说明栈中的结点不必翻转了（结点个数不足k个）
+ Java代码： public ListNode reverseKGroup(ListNode head, int k) {Stack&lt;ListNode&gt; stack = new Stack&lt;&gt;();ListNode dummy = new ListNode(0);ListNode p = dummy;while(true){int count = 0;ListNode tmp = head;while(tmp != null &amp;&amp; count &lt; k){count&#43;&#43;;stack." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zg999.github.io/post/k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" />
+<meta property="article:published_time" content="2020-05-19T11:55:26+08:00" />
+<meta property="article:modified_time" content="2020-05-19T11:55:26+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://zg999.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>Eric&#39;s Blog</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">K个一组翻转链表</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 19, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://zg999.github.io/tags/leetcode/">Leetcode</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="题目描述">题目描述：</h1>
+<p>给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。</p>
+<p>k 是一个正整数，它的值小于或等于链表的长度。</p>
+<p>如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p> </p>
+<p>示例：</p>
+<p>给你这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5</p>
+<p>当 k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5</p>
+<p>当 k = 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5</p>
+<p> </p>
+<p>说明：</p>
+<p>你的算法只能使用常数的额外空间。<br>
+你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。</p>
+<hr>
+<h1 id="解题思路">解题思路：</h1>
+<p>翻转问题让我们想到栈这个后进先出的结构。循环中每次入栈k个结点，然后将当前指针p指向第k+1个结点。<br>
+将这k个结点依次取出并修改指针指向，并把最后一个结点指向p结点（这样就连接上了后面还未翻转的链表），如此循环下去。<br>
+<strong>注意</strong>要考虑好剩下链表结点个数不够k个的问题：结点入栈的同时记录已经入栈了几个结点，如果栈中结点还小于k时链表就空了，那说明栈中的结点不必翻转了（结点个数不足k个）</p>
+<hr>
+<h1 id="java代码">Java代码：</h1>
+<pre><code>public ListNode reverseKGroup(ListNode head, int k) 
+	{
+		Stack&lt;ListNode&gt; stack = new Stack&lt;&gt;();
+		ListNode dummy = new ListNode(0);
+		ListNode p = dummy;
+		
+		while(true)
+		{
+			int count = 0;
+			ListNode tmp = head;
+			while(tmp != null &amp;&amp; count &lt; k)
+			{
+				count++;
+				stack.add(tmp);
+				tmp = tmp.next;
+			}
+			//count &lt; k说明循环跳出条件是tmp = null，也就是说长度不够k了，剩下的不翻转
+			if(count &lt; k)
+			{
+				p.next = head;
+				break;
+			}
+			while(!stack.isEmpty())
+			{
+				p.next = stack.pop();
+				p = p.next;
+			}
+			//p指向未翻转的第一个
+			p.next = tmp;
+			head = tmp;
+		}
+		//返回链表的第一个结点
+		return dummy.next;
+    }
+</code></pre>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

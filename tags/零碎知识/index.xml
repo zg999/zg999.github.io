@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>零碎知识 on Eric&#39;s Blog</title>
+    <link>https://zg999.github.io/tags/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/</link>
+    <description>Recent content in 零碎知识 on Eric&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jun 2020 13:45:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://zg999.github.io/tags/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java的BigInteger类</title>
+      <link>https://zg999.github.io/post/java%E7%9A%84biginteger%E7%B1%BB/</link>
+      <pubDate>Tue, 23 Jun 2020 13:45:38 +0800</pubDate>
+      
+      <guid>https://zg999.github.io/post/java%E7%9A%84biginteger%E7%B1%BB/</guid>
+      <description>位置：java.math.BigInteger
+作用：提供高精度整型数据类型及相关操作
+一、基本介绍 BigInteger为不可变的任意精度的整数（对象创建后无法改变，每次运算均会产生一个新的对象）。
+所有操作中，都以二进制补码形式表示 BigInteger（同Java 的基本整数类型）。
+提供所有 Java 的基本整数操作符（* / + -等等）的对应物（一堆函数）。
+**提供 java.lang.Math 的所有相关方法**，此外还提供模算术、GCD 计算（最大公约数）、质数测试、素数生成、位操作以及一些其他操作。
+**算术运算、逐位逻辑运算**的语义完全模仿 Java 整数算术运算符的语义。
+**位移操作**允许产生负位移距离，且忽略了无符号的右位移运算符（&amp;raquo;&amp;gt;）。
+**比较操作**执行有符号的整数比较，类似于 Java 的关系运算符和相等性运算符执行的比较。
+**模算术操**作用来计算余数、求幂和乘法可逆元。这些方法始终返回非负结果，范围在 0 和 (modulus - 1)（包括）之间。
+**位操作**对其操作数的二进制补码表示形式的单个位进行操作。如有必要，操作数会通过扩展符号来包含指定的位。单一位操作不能产生与正在被操作的 BigInteger 符号不同的 BigInteger，因为它们仅仅影响单个位，并且此类提供的“无穷大词大小”抽象可保证在每个 BigInteger 前存在无穷多的“虚拟符号位”数。
+当为任何输入参数传递 null 对象引用时，此类中的所有方法和构造方法都将抛出 NullPointerException。
+二、字段 static BigInteger ONE　//BigInteger常量1 static BigInteger TEN //BigInteger常量10 static BigInteger ZERO //BigInteger常量0 三、生成BigInteger对象 构造函数 BigInteger( byte[] val ) //将包含BigInteger的二进制补码表示形式的byte数组转换为BigInteger BigInteger( int signum , byte[] magnitude )　//byte数组同上一条，signum表示符号：1为正，-1为负，0为零（signum为0时byte数组不可包含非零字节） BigInteger( int bitLength , int certainty ,Random rnd )　//生成BigInteger伪随机数，它可能是（概率不小于1 - 1/2certainty）一个具有指定 bitLength 的素数 BigInteger( int numBits , Random rnd )　//生成BigInteger伪随机数，其值均匀分布于[ 0 , 2numBits - 1 ) BigInteger( String val )　//将 BigInteger 的十进制字符串表示形式转换为 BigInteger（可包含前导负号） BigInteger( String val ,int radix )　//将指定基数（进制）的 BigInteger 的字符串表示形式转换为 BigInteger 四、常(suo)用(you)方法 算术运算（+ - * / % mod） BigInteger add( BigInteger val ) //返回其值为(this + val)的BigInteger BigInteger subtract( BigInteger val ) //返回其值为(this - val)的BigInteger BigInteger negate()　//返回其值是(-this)的BigInteger BigInteger multiply( BigInteger val )　//返回其值为(this * val)的BigInteger BigInteger divide( BigInteger val )　//返回其值为(this / val)的BigInteger BigInteger remainder( BigInteger val )　//返回其值为(this % val)的BigInteger BigInteger[] divideAndRemainder( BigInteger val )　//返回包含(this / val)后跟(this % val)的两个BigInteger的数组 BigInteger mod( BigInteger m )　//返回其值为(this mod m)的BigInteger（与%不同，其值永远为正，下同） BigInteger modInverse( BigInteger m ) //返回其值为(this-1 mod m)的BigInteger BigInteger modPow( BigInteger exponent , BigInteger m ) 返回其值为(thisexponent mod m)的BigInteger（exponent可以为负） 关系运算（== &amp;gt; &amp;gt;= &amp;lt; &amp;lt;= !</description>
+    </item>
+    
+    <item>
+      <title>Java取余和取模的区别</title>
+      <link>https://zg999.github.io/post/java%E5%8F%96%E4%BD%99%E5%92%8C%E5%8F%96%E6%A8%A1%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 27 May 2020 11:38:27 +0800</pubDate>
+      
+      <guid>https://zg999.github.io/post/java%E5%8F%96%E4%BD%99%E5%92%8C%E5%8F%96%E6%A8%A1%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>取模与取余的区别 对于整型数a，b来说，取模运算或者求余运算的方法都是：
+1.求 整数商： c = a/b;
+2.计算模或者余数： r = a - c * b
+求模运算和求余运算在第一步不同: 取余运算在取c的值时，向0 方向舍入(fix()函数)；而取模运算在计算c的值时，向负无穷方向舍入(floor()函数)。
+例如计算：-7 Mod 4
+那么：a = -7；b = 4；
+第一步：求整数商c，如进行求模运算c = -2（向负无穷方向舍入），求余c = -1（向0方向舍入）；
+第二步：计算模和余数的公式相同，但因c的值不同，求模时r = 1，求余时r = -3。
+归纳：当a和b符号一致时，求模运算和求余运算所得的c的值一致，因此结果一致。
+当符号不一致时，结果不一样。求模运算结果的符号和b一致，求余运算结果的符号和a一致。
+另外各个环境下%运算符的含义不同，比如c/c++，java 为取余，而python则为取模。
+Java程序示例：
+	public static void main(String[] args) {System.out.println(&amp;quot;-3,2取模&amp;quot;+Math.floorMod(-3,2));System.out.println(&amp;quot;-3,2取余&amp;quot;+ -3%2);System.out.println(&amp;quot;3,-2取模&amp;quot;+Math.floorMod(3,-2));System.out.println(&amp;quot;3,2取余&amp;quot;+ 3%-2);}结果:
+-3,2取模=1-3,2取余=-13,-2取模=-13,2取余=1</description>
+    </item>
+    
+  </channel>
+</rss>

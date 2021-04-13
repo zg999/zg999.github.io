@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leetcode on Eric&#39;s Blog</title>
+    <link>https://zg999.github.io/tags/leetcode/</link>
+    <description>Recent content in Leetcode on Eric&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 May 2020 11:55:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://zg999.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>K个一组翻转链表</title>
+      <link>https://zg999.github.io/post/k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Tue, 19 May 2020 11:55:26 +0800</pubDate>
+      
+      <guid>https://zg999.github.io/post/k%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <description>题目描述： 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
+k 是一个正整数，它的值小于或等于链表的长度。
+如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+ 示例：
+给你这个链表：1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5
+当 k = 2 时，应当返回: 2-&amp;gt;1-&amp;gt;4-&amp;gt;3-&amp;gt;5
+当 k = 3 时，应当返回: 3-&amp;gt;2-&amp;gt;1-&amp;gt;4-&amp;gt;5
+ 说明：
+你的算法只能使用常数的额外空间。
+你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+ 解题思路： 翻转问题让我们想到栈这个后进先出的结构。循环中每次入栈k个结点，然后将当前指针p指向第k+1个结点。
+将这k个结点依次取出并修改指针指向，并把最后一个结点指向p结点（这样就连接上了后面还未翻转的链表），如此循环下去。
+注意要考虑好剩下链表结点个数不够k个的问题：结点入栈的同时记录已经入栈了几个结点，如果栈中结点还小于k时链表就空了，那说明栈中的结点不必翻转了（结点个数不足k个）
+ Java代码： public ListNode reverseKGroup(ListNode head, int k) {Stack&amp;lt;ListNode&amp;gt; stack = new Stack&amp;lt;&amp;gt;();ListNode dummy = new ListNode(0);ListNode p = dummy;while(true){int count = 0;ListNode tmp = head;while(tmp != null &amp;amp;&amp;amp; count &amp;lt; k){count++;stack.</description>
+    </item>
+    
+  </channel>
+</rss>

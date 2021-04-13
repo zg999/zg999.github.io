@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>10 1.斐波那契数列 // Eric&#39;s Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.70.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://zg999.github.io/css/main.min.88e7083eff65effb7485b6e6f38d10afbec25093a6fac42d734ce9024d3defbd.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="10 1.斐波那契数列"/>
+<meta name="twitter:description" content="题目描述： 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：
+F(0) = 0, F(1) = 1
+F(N) = F(N - 1) &#43; F(N - 2), 其中 N &gt; 1.
+斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
+答案需要取模 1e9&#43;7（1000000007），如计算初始结果为：1000000008，请返回 1。
+ 解题思路： 方法一：直接递归 方法二：动态规划 状态定义： 设 dp 为一维数组，其中 dp[i] 的值代表 斐波那契数列第 i 个数字 。
+转移方程： dp[i&#43;1]=dp[i]&#43;dp[i−1] ，即对应数列定义f(n&#43;1)=f(n)&#43;f(n−1) ；
+初始状态： dp[0]=0,dp[1]=1 ，即初始化前两个数字；
+返回值： dp[n] ，即斐波那契数列的第 n 个数字。
+Java代码： public class Solution {public int fib(int n) {int[] dp = new int[n&#43;1];if(n == 0)return 0;dp[0] = 0;dp[1] = 1;for(int i = 1; i &lt; n; i&#43;&#43;){dp[i&#43;1] = dp[i] &#43; dp[i-1];dp[i&#43;1] = dp[i&#43;1] % 1000000007;}return dp[n];}} 方法三：在动态规划的基础上优化空间复杂度 由于 dp 列表第 i 项只与第 i−1 和第 i−2 项有关，因此只需要初始化三个整形变量 sum, a, b ，利用辅助变量 sum 使 a, b两数字交替前进即可 （具体实现见代码） 。 节省了 dp 列表空间，因此空间复杂度降至 O(1) 。 注： 为什么返回a呢？因为当n=0时不进入循环，所以直接返回a。（其实单独讨论n=0也可以），写几个式子一看就明白了"/>
+
+    <meta property="og:title" content="10 1.斐波那契数列" />
+<meta property="og:description" content="题目描述： 写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：
+F(0) = 0, F(1) = 1
+F(N) = F(N - 1) &#43; F(N - 2), 其中 N &gt; 1.
+斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。
+答案需要取模 1e9&#43;7（1000000007），如计算初始结果为：1000000008，请返回 1。
+ 解题思路： 方法一：直接递归 方法二：动态规划 状态定义： 设 dp 为一维数组，其中 dp[i] 的值代表 斐波那契数列第 i 个数字 。
+转移方程： dp[i&#43;1]=dp[i]&#43;dp[i−1] ，即对应数列定义f(n&#43;1)=f(n)&#43;f(n−1) ；
+初始状态： dp[0]=0,dp[1]=1 ，即初始化前两个数字；
+返回值： dp[n] ，即斐波那契数列的第 n 个数字。
+Java代码： public class Solution {public int fib(int n) {int[] dp = new int[n&#43;1];if(n == 0)return 0;dp[0] = 0;dp[1] = 1;for(int i = 1; i &lt; n; i&#43;&#43;){dp[i&#43;1] = dp[i] &#43; dp[i-1];dp[i&#43;1] = dp[i&#43;1] % 1000000007;}return dp[n];}} 方法三：在动态规划的基础上优化空间复杂度 由于 dp 列表第 i 项只与第 i−1 和第 i−2 项有关，因此只需要初始化三个整形变量 sum, a, b ，利用辅助变量 sum 使 a, b两数字交替前进即可 （具体实现见代码） 。 节省了 dp 列表空间，因此空间复杂度降至 O(1) 。 注： 为什么返回a呢？因为当n=0时不进入循环，所以直接返回a。（其实单独讨论n=0也可以），写几个式子一看就明白了" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zg999.github.io/post/10-1/" />
+<meta property="article:published_time" content="2020-05-28T13:10:45+08:00" />
+<meta property="article:modified_time" content="2020-05-28T13:10:45+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://zg999.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>Eric&#39;s Blog</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">10 1.斐波那契数列</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 28, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://zg999.github.io/tags/%E5%89%91%E6%8C%87offer/">剑指offer</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="题目描述">题目描述：</h1>
+<p>写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：</p>
+<p>F(0) = 0,   F(1) = 1<br>
+F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.</p>
+<p>斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。</p>
+<p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p>
+<hr>
+<h1 id="解题思路">解题思路：</h1>
+<h2 id="方法一直接递归">方法一：直接递归</h2>
+<h2 id="方法二动态规划">方法二：动态规划</h2>
+<p><strong>状态定义：</strong> 设 dp 为一维数组，其中 dp[i] 的值代表 斐波那契数列第 i 个数字 。<br>
+<strong>转移方程：</strong> dp[i+1]=dp[i]+dp[i−1] ，即对应数列定义f(n+1)=f(n)+f(n−1) ；<br>
+<strong>初始状态：</strong> dp[0]=0,dp[1]=1 ，即初始化前两个数字；<br>
+<strong>返回值：</strong> dp[n] ，即斐波那契数列的第 n 个数字。</p>
+<h2 id="java代码">Java代码：</h2>
+<pre><code>public class Solution 
+{
+	public int fib(int n) 
+    {
+    	int[] dp = new int[n+1];
+    	if(n == 0)
+    		return 0;
+    	dp[0] = 0;
+    	dp[1] = 1;
+    	for(int i = 1; i &lt; n; i++)
+    	{
+    		dp[i+1] = dp[i] + dp[i-1];
+            dp[i+1] = dp[i+1] % 1000000007;
+    	}
+    	return dp[n];
+    }
+}
+</code></pre><hr>
+<h2 id="方法三在动态规划的基础上优化空间复杂度">方法三：在动态规划的基础上优化空间复杂度</h2>
+<p>由于 dp 列表第 i 项只与第 i−1 和第 i−2 项有关，因此只需要初始化三个整形变量 sum, a, b ，利用辅助变量 sum 使 a, b两数字交替前进即可 （具体实现见代码） 。
+节省了 dp 列表空间，因此空间复杂度降至 O(1) 。
+<strong>注：</strong> 为什么返回a呢？因为当n=0时不进入循环，所以直接返回a。（其实单独讨论n=0也可以），写几个式子一看就明白了</p>
+<pre><code>public class Solution 
+{
+	public int fib(int n) 
+    {
+    	int a = 0, b = 1, sum = a + b;
+    	for(int i = 0; i &lt; n; i++)
+    	{
+    		sum = (a + b) % 1000000007;
+    		a = b;
+    		b = sum;
+    	}
+    	return a;
+    }
+}
+</code></pre>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
